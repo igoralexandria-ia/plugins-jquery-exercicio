@@ -5,17 +5,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    background-color: #f2f2f2;
-    color: #333;
+html {
+    overflow-x: hidden; /*Retirar barra de rolagem na horizontal*/
 }
 
-header {
-    background-color: #007bff;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin: 0 auto;
+body {
+    background-color: #ccdff3;
 }
 
 h2 {
@@ -23,42 +18,182 @@ h2 {
     margin-bottom: 16px;
 }
 
+#title-about {
+    text-align: start;
+}
+
 .container {
-    max-width: 600px;
+    max-width: 1024px;
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
-    margin-top: 30px;
+}
+
+header, footer {
+    background-color: #007bff;
+    color: #fff;    
+    padding-top: 16px;   
+}
+
+/*Fazer com que o cabeçalho acompanhe o scroll*/
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/*Como existem dois container, aqui está destacando que apenas o container do header/footer será alterado*/
+header > .container,
+footer > .container {
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+nav {
+    background-color: #444647;
+    padding: 16px 0;
+    display: none;
+}
+
+nav li {
+    list-style: none;
+    display: inline;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-hamburguer {
+    width: 32px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    height: 2px;
+    width: 100%;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.container-flex {
+    display: flex;
+}
+
+#about-company img {
+    max-width: 400px;
+    margin-right: 24px;
+}
+
+section {
+    padding: 48px 0;
+}
+
+section h2 {
+    margin-bottom: 16px;
+}
+
+.list-ticket {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.list-ticket li{
+    list-style: none;
+    max-width: 30%;
+    margin-bottom: 24px;
+}
+
+.list-ticket li img {
+    max-width: 100%;
+}
+
+.list-ticket li h3 {
+    margin: 16px 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-color: black;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ccdff3;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.price {
+    margin: 16px 0;
+    display: block;
+}
+
+.price del {
+    color: #777373;
+    font-size: 14px;
+}
+
+.form-wrapper {
+    border: 1px solid #000000;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #a3c5e4; 
+    margin-top: 16px;
 }
 
 .form-campo {
-    margin-bottom: 20px;
+    margin-bottom: 16px;   
+    width: 100%;
+    max-width: 60%;
 }
 
 .form-campo label {
-    display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    display: block;
+    width: 100%;
 }
 
 .form-campo input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    display: block;
+    padding: 8px;
     border-radius: 5px;
 }
 
-.container button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    display: inline-block;
+form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;   
 }
 
-.error {
-    color: red
+form button {
+    max-width: 130px;
+}
+
+footer li{
+    list-style: none;
+    margin-left: 16px;
+}
+
+footer li img {
+    height: 32px;
 }
